@@ -8,7 +8,7 @@ filetype plugin indent on
 
 augroup vimrc
   autocmd!
-  autocmd GuiEnter * set guioptions-=T columns=190 lines=50 number
+  autocmd GuiEnter * set guifont=Inconsolata\ Medium\ 12 guioptions-=T columns=190 lines=50 number
 augroup END
 
 set tabstop=2
