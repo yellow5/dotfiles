@@ -36,6 +36,7 @@ get_bundle tpope vim-speeddating
 get_bundle tpope vim-surround
 get_bundle tpope vim-unimpaired
 get_bundle tpope vim-vividchalk
+get_bundle vim-ruby vim-ruby
 get_bundle wgibbs vim-irblack
 get_bundle scrooloose nerdtree
 get_bundle altercation vim-colors-solarized
