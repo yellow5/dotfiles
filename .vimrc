@@ -15,6 +15,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+iabbrev rdebug  require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger
+
 let NERDTreeHijackNetrw=0
 
 if filereadable(expand('~/.vimrc.local'))
