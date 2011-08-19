@@ -33,5 +33,12 @@ if [ -f $git_completion ]; then
   source $git_completion
 fi
 
+# Support 256 colors if available
+if [ -e /usr/share/terminfo/x/xterm+256color ]; then
+  export TERM='xterm-256color'
+else
+  export TERM='xterm-color'
+fi
+
 [ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
