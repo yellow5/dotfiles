@@ -9,6 +9,7 @@ filetype plugin indent on
 augroup vimrc
   autocmd!
   autocmd GuiEnter * set guifont=Inconsolata\ Medium\ 9 guioptions-=T columns=190 lines=50
+  autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
 augroup END
 
 set number
