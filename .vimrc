@@ -18,6 +18,7 @@ set shiftwidth=2
 set expandtab
 
 iabbrev rdebug  require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger
+command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
 
 let NERDTreeHijackNetrw=0
 
