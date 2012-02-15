@@ -38,3 +38,5 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # SM config
 export PATH="${PATH}:/home/cameron/.sm/bin:/home/cameron/.sm/pkg/active/bin:/home/cameron/.sm/pkg/active/sbin"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
