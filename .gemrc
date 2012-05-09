@@ -8,3 +8,4 @@ gem: --no-rdoc --no-ri
 :backtrace: false
 :verbose: true
 :benchmark: false
+custom_shebang: $env ruby_noexec_wrapper
