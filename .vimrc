@@ -26,3 +26,5 @@ let NERDTreeHijackNetrw=0
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
+
+set printoptions=duplex:off
