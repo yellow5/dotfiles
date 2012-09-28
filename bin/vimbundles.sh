@@ -40,3 +40,4 @@ get_bundle vim-ruby vim-ruby
 get_bundle wgibbs vim-irblack
 get_bundle scrooloose nerdtree
 get_bundle altercation vim-colors-solarized
+get_bundle jimenezrick vimerl
