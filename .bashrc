@@ -43,4 +43,6 @@ fi
 [ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin        # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/heroku     # Add heroku to PATH
+PATH=$PATH:/usr/local/heroku/bin # Add heroku/bin to PATH
