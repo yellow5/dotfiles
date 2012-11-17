@@ -53,6 +53,6 @@ if ARGV.include?('-h')
 end
 
 (Dir.entries(root) - %w(bin . .. .git)).each do |file|
-  next if file =~ /~$/
+  next if file =~ /(~|.*\.swp)$/
   uninstall? ? uninstall(file) : install(file)
 end
