@@ -33,6 +33,11 @@ if [ -f $git_completion ]; then
   source $git_completion
 fi
 
+# enable bash completion in interactive shells
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
 # Support 256 colors if available
 if [ -e /usr/share/terminfo/x/xterm+256color ]; then
   export TERM='xterm-256color'
