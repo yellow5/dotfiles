@@ -13,12 +13,16 @@ get_bundle() {
   )
 }
 
+get_bundle altercation vim-colors-solarized
 get_bundle duff vim-bufonly
+get_bundle Floobits vim-plugin
 get_bundle godlygeek tabular
+get_bundle jimenezrick vimerl
 get_bundle leshill vim-json
 get_bundle mileszs ack.vim
 get_bundle pangloss vim-javascript
 get_bundle scrooloose nerdcommenter
+get_bundle scrooloose nerdtree
 get_bundle therubymug vim-pyte
 get_bundle tpope vim-abolish
 get_bundle tpope vim-bundler
@@ -39,7 +43,3 @@ get_bundle tpope vim-unimpaired
 get_bundle tpope vim-vividchalk
 get_bundle vim-ruby vim-ruby
 get_bundle wgibbs vim-irblack
-get_bundle scrooloose nerdtree
-get_bundle altercation vim-colors-solarized
-get_bundle jimenezrick vimerl
-get_bundle Floobits vim-plugin
