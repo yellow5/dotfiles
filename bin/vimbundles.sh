@@ -1,5 +1,5 @@
-mkdir -p ~/.vimbundles
-cd ~/.vimbundles
+mkdir -p ~/.vim/bundle
+cd ~/.vim/bundle
 
 get_bundle() {
   (
