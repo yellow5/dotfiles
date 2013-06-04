@@ -1,1 +1,1 @@
---type-add=ruby=.haml,.sass,.rake,.builder,.feature,.sql,.gemspec,.rabl
+--type-add=ruby:ext:haml,sass,builder,feature,gemspec,rabl
