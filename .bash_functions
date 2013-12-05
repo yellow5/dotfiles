@@ -62,3 +62,11 @@ function reegc {
   export RUBY_HEAP_FREE_MIN=
   export RUBY_GC_MALLOC_LIMIT=
 }
+
+function rubygc {
+  export RUBY_GC_MALLOC_LIMIT=1000000000
+  export RUBY_FREE_MIN=500000
+  "$@"
+  export RUBY_GC_MALLOC_LIMIT=
+  export RUBY_FREE_MIN=
+}
