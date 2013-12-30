@@ -1,6 +1,11 @@
 # ~/.bash_aliases
 
-alias ls='ls -F --color=auto'
+if [ `uname -s` == "Darwin" ]; then
+  alias ls='ls -FG'
+else
+  alias ls='ls -F --color=auto'
+fi
+
 alias ll='ls -l'
 alias la='ls -A'
 
