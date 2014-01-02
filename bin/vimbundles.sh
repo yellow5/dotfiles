@@ -15,6 +15,7 @@ get_bundle() {
 
 get_bundle altercation vim-colors-solarized
 get_bundle duff vim-bufonly
+get_bundle flazz vim-colorschemes
 get_bundle godlygeek tabular
 get_bundle jimenezrick vimerl
 get_bundle leshill vim-json
