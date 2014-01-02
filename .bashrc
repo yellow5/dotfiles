@@ -32,13 +32,6 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
-# Support 256 colors if available
-if [ -e /usr/share/terminfo/x/xterm+256color ]; then
-  export TERM='xterm-256color'
-else
-  export TERM='xterm-color'
-fi
-
 PATH=$HOME/bin:$PATH             # Add my bin to the front of PATH
 PATH=$PATH:$HOME/.rvm/bin        # Add RVM to PATH for scripting
 PATH=$PATH:/usr/local/heroku     # Add heroku to PATH
