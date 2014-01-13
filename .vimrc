@@ -27,4 +27,5 @@ if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
 
+set shellcmdflag=-ic
 set printoptions=duplex:off
