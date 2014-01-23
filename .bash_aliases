@@ -1,6 +1,6 @@
 # ~/.bash_aliases
 
-if [ `uname -s` == "Darwin" ]; then
+if [ `uname -s` == "Darwin" ] || [ `uname -s` == "FreeBSD" ]; then
   alias ls='ls -FG'
 else
   alias ls='ls -F --color=auto'
