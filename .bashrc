@@ -32,6 +32,11 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
+# Enable bash completion in OSX interactive shells
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 # Enable bash completion in BSD interactive shells
 [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] && \
   source /usr/local/share/bash-completion/bash_completion.sh
