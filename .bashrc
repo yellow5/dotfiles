@@ -27,10 +27,14 @@ bind '"\C-w": backward-kill-word'
 
 [ -z "$PS1" ] || export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch)$ "
 
-# enable bash completion in interactive shells
+# Enable bash completion in Linux interactive shells
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
+
+# Enable bash completion in BSD interactive shells
+[[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] && \
+  source /usr/local/share/bash-completion/bash_completion.sh
 
 PATH=$PATH:$HOME/bin             # Add my bin to the PATH
 PATH=$PATH:$HOME/.rvm/bin        # Add RVM to PATH for scripting
