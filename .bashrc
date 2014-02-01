@@ -33,7 +33,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Enable bash completion in OSX interactive shells
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+if [[ $(type -P brew) && -f $(brew --prefix)/etc/bash_completion ]]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
