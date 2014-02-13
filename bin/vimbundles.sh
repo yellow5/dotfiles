@@ -13,7 +13,6 @@ get_bundle() {
   )
 }
 
-get_bundle altercation vim-colors-solarized
 get_bundle duff vim-bufonly
 get_bundle flazz vim-colorschemes
 get_bundle godlygeek tabular
@@ -24,7 +23,6 @@ get_bundle pangloss vim-javascript
 get_bundle rking ag.vim
 get_bundle scrooloose nerdcommenter
 get_bundle scrooloose nerdtree
-get_bundle therubymug vim-pyte
 get_bundle tpope vim-abolish
 get_bundle tpope vim-bundler
 get_bundle tpope vim-cucumber
@@ -41,6 +39,5 @@ get_bundle tpope vim-repeat
 get_bundle tpope vim-speeddating
 get_bundle tpope vim-surround
 get_bundle tpope vim-unimpaired
-get_bundle tpope vim-vividchalk
 get_bundle vim-ruby vim-ruby
 get_bundle wgibbs vim-irblack
