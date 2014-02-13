@@ -3,7 +3,7 @@ if exists('g:loaded_pathogen')
   execute pathogen#infect()
 endif
 
-syntax on
+syntax enable
 filetype plugin indent on
 
 augroup vimrc
