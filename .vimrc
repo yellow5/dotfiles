@@ -12,12 +12,24 @@ augroup vimrc
 augroup END
 
 set number
+set expandtab
+
+" Default spacing
 set tabstop=2
 set shiftwidth=2
-set expandtab
+
+" Erlang spacing
+augroup erlang
+  au!
+  au BufNewFile,BufRead *.erl setlocal tabstop=4
+  au BufNewFile,BufRead *.erl setlocal shiftwidth=4
+  au BufNewFile,BufRead *.hrl setlocal filetype=erlang
+  au BufNewFile,BufRead relx.config setlocal filetype=erlang
+augroup END
 
 iabbrev rpry require 'pry'; binding.pry
 command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
+command! EchoFile echo expand('%:p')
 
 let NERDTreeHijackNetrw=0
 
