@@ -3,16 +3,13 @@ if exists('g:loaded_pathogen')
   execute pathogen#infect()
 endif
 
+" General configuration
 syntax enable
 filetype plugin indent on
-
-augroup vimrc
-  autocmd!
-  autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
-augroup END
-
+set shell=bash\ --rcfile\ ~/.bashrc
 set number
 set expandtab
+set printoptions=duplex:off
 
 " Default spacing
 set tabstop=2
@@ -27,15 +24,21 @@ augroup erlang
   au BufNewFile,BufRead relx.config setlocal filetype=erlang
 augroup END
 
+" Configure Rails to work with Fabrication
+augroup vimrc
+  autocmd!
+  autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
+augroup END
+
+" Simple helpers
 iabbrev rpry require 'pry'; binding.pry
 command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
 command! EchoFile echo expand('%:p')
 
+" Disable NERDTree by default
 let NERDTreeHijackNetrw=0
 
+" Load ~/.vimrc.local if it's available
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
-
-set shell=bash\ --rcfile\ ~/.bashrc
-set printoptions=duplex:off
