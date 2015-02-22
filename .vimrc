@@ -3,8 +3,14 @@ if exists('g:loaded_pathogen')
   execute pathogen#infect()
 endif
 
-" General configuration
+" Configure the default colorscheme
 syntax enable
+set background=dark
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+colorscheme solarized
+
+" General configuration
 filetype plugin indent on
 set shell=bash\ --rcfile\ ~/.bashrc
 set number
