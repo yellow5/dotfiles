@@ -44,6 +44,9 @@ command! EchoFile echo expand('%:p')
 " Disable NERDTree by default
 let NERDTreeHijackNetrw=0
 
+" Enable airline
+let g:airline#extensions#tabline#enabled = 1
+
 " Load ~/.vimrc.local if it's available
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
