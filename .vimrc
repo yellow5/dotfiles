@@ -42,6 +42,12 @@ iabbrev rpry require 'pry'; binding.pry
 command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
 command! EchoFile echo expand('%:p')
 
+" Associate *.sc files with Scala
+augroup scala
+  au!
+  au BufNewFile,BufRead *.sc setfiletype scala
+augroup END
+
 " Disable NERDTree by default
 let NERDTreeHijackNetrw=0
 
