@@ -13,6 +13,7 @@ get_bundle() {
   )
 }
 
+get_bundle avdgaag vim-phoenix
 get_bundle bling vim-airline
 get_bundle derekwyatt vim-scala
 get_bundle duff vim-bufonly
