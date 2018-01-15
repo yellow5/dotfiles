@@ -31,12 +31,6 @@ augroup erlang
   au BufNewFile,BufRead relx.config setlocal filetype=erlang
 augroup END
 
-" Configure Rails to work with Fabrication
-augroup vimrc
-  autocmd!
-  autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
-augroup END
-
 " Simple helpers
 iabbrev rpry require 'pry'; binding.pry
 command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
