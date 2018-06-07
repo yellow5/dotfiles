@@ -10,8 +10,6 @@ set background=dark
 let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 colorscheme solarized
-let g:airline_theme = "solarized"
-let g:solarized_airline_bg = "dark"
 
 " General configuration
 filetype plugin indent on
@@ -47,8 +45,10 @@ augroup END
 " Disable NERDTree by default
 let NERDTreeHijackNetrw=0
 
-" Enable airline
+" Airline config
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = "solarized"
+let g:solarized_airline_bg = "dark"
 
 " Load ~/.vimrc.local if it's available
 if filereadable(expand('~/.vimrc.local'))
