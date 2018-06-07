@@ -10,6 +10,8 @@ set background=dark
 let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 colorscheme solarized
+let g:airline_theme = "solarized"
+let g:solarized_airline_bg = "dark"
 
 " General configuration
 filetype plugin indent on
