@@ -14,7 +14,6 @@ get_bundle() {
 }
 
 get_bundle avdgaag vim-phoenix
-get_bundle bling vim-airline
 get_bundle derekwyatt vim-scala
 get_bundle duff vim-bufonly
 get_bundle elixir-editors vim-elixir
@@ -43,4 +42,5 @@ get_bundle tpope vim-repeat
 get_bundle tpope vim-speeddating
 get_bundle tpope vim-surround
 get_bundle tpope vim-unimpaired
+get_bundle vim-airline vim-airline
 get_bundle vim-ruby vim-ruby
