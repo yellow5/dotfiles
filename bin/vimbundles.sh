@@ -17,7 +17,6 @@ get_bundle avdgaag vim-phoenix
 get_bundle derekwyatt vim-scala
 get_bundle duff vim-bufonly
 get_bundle elixir-editors vim-elixir
-get_bundle flazz vim-colorschemes
 get_bundle godlygeek tabular
 get_bundle jimenezrick vimerl
 get_bundle lambdatoast elm.vim
