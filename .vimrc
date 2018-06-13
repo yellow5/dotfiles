@@ -7,9 +7,9 @@ endif
 syntax enable
 set t_Co=256
 set background=dark
-let g:solarized_termcolors = 256
-let g:solarized_visibility = "high"
-colorscheme solarized
+let g:gruvbox_contrast_dark = "medium"
+let g:gruvbox_contrast_light = "medium"
+colorscheme gruvbox
 
 " General configuration
 filetype plugin indent on
@@ -47,8 +47,6 @@ let NERDTreeHijackNetrw=0
 
 " Airline config
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = "solarized"
-let g:solarized_airline_bg = "dark"
 
 " Load ~/.vimrc.local if it's available
 if filereadable(expand('~/.vimrc.local'))
