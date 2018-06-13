@@ -22,6 +22,7 @@ get_bundle godlygeek tabular
 get_bundle jimenezrick vimerl
 get_bundle lambdatoast elm.vim
 get_bundle leshill vim-json
+get_bundle morhetz gruvbox
 get_bundle pangloss vim-javascript
 get_bundle rking ag.vim
 get_bundle scrooloose nerdcommenter
