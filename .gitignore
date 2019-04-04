@@ -2,3 +2,4 @@
 .vim/bundle
 .vim/.netrwhist
 .vim/doc/tags
+.vim/autoload/pathogen.vim
