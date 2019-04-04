@@ -33,8 +33,15 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Enable bash completion in OSX interactive shells
-if [[ $(type -P brew) && -f $(brew --prefix)/etc/bash_completion ]]; then
-  . $(brew --prefix)/etc/bash_completion
+if type brew &>/dev/null; then
+  for COMPLETION in $(brew --prefix)/etc/bash_completion.d/*
+  do
+    [[ -f $COMPLETION ]] && source "$COMPLETION"
+  done
+  if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]];
+  then
+    source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+  fi
 fi
 
 # Enable bash completion in BSD interactive shells
