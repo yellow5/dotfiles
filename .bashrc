@@ -42,8 +42,6 @@ fi
   source /usr/local/share/bash-completion/bash_completion.sh
 
 PATH=$PATH:$HOME/bin             # Add my bin to the PATH
-PATH=$PATH:$HOME/.rvm/bin        # Add RVM to PATH for scripting
 export PATH
 
 [ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
