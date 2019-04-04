@@ -52,3 +52,11 @@ PATH=$PATH:$HOME/bin             # Add my bin to the PATH
 export PATH
 
 [ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
+
+# Enable asdf
+if type brew &>/dev/null; then
+  . $(brew --prefix asdf)/asdf.sh
+fi
+if [ -f /etc/bash_completion ]; then
+  . $HOME/.asdf/asdf.sh
+fi
