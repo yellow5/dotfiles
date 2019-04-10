@@ -8,9 +8,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias sc='script_rails console'
-alias ss='script_rails server -u'
-alias sdbc='script_rails dbconsole -p'
+alias be='bundle exec'
 
 alias gb='git branch'
 alias gc='git commit -v'
