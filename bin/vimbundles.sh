@@ -19,6 +19,7 @@ get_bundle duff vim-bufonly
 get_bundle elixir-editors vim-elixir
 get_bundle godlygeek tabular
 get_bundle jimenezrick vimerl
+get_bundle kchmck vim-coffee-script
 get_bundle lambdatoast elm.vim
 get_bundle leshill vim-json
 get_bundle morhetz gruvbox
