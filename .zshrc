@@ -83,6 +83,7 @@ plugins=(
   mix
   npm
   rails
+  rake
   ruby
   sudo
   thor
