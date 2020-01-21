@@ -72,6 +72,7 @@ plugins=(
   asdf
   brew
   bundler
+  colorize
   dotenv
   git
   git-flow
