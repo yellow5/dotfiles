@@ -120,3 +120,5 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='ls -FG'
+
+[ ! -f "$HOME/.zshrc.local" ] || . "$HOME/.zshrc.local"
