@@ -5,11 +5,8 @@ endif
 
 " Configure the default colorscheme
 syntax enable
-set t_Co=256
-set background=dark
-let g:gruvbox_contrast_dark = "medium"
-let g:gruvbox_contrast_light = "medium"
-colorscheme gruvbox
+set termguicolors
+colorscheme base16-tomorrow-night
 
 " General configuration
 filetype plugin indent on
