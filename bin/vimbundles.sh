@@ -14,6 +14,7 @@ get_bundle() {
 }
 
 get_bundle avdgaag vim-phoenix
+get_bundle chriskempson base16-vim
 get_bundle derekwyatt vim-scala
 get_bundle duff vim-bufonly
 get_bundle elixir-editors vim-elixir
