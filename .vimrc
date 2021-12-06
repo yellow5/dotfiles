@@ -7,6 +7,7 @@ endif
 syntax enable
 set termguicolors
 colorscheme base16-tomorrow-night
+"colorscheme base16-tomorrow
 
 " General configuration
 filetype plugin indent on
