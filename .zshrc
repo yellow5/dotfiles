@@ -72,7 +72,6 @@ ZSH_DOTENV_PROMPT=false
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  asdf
   brew
   bundler
   colorize
