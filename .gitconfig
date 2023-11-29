@@ -3,3 +3,5 @@
 	email = yellow5c@gmail.com
 [color]
 	ui = auto
+[init]
+	defaultBranch = main
