@@ -72,6 +72,7 @@ ZSH_DOTENV_PROMPT=false
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  asdf
   brew
   bundler
   colorize
@@ -125,4 +126,8 @@ alias ls='ls -FG'
 
 [ ! -f "$HOME/.zshrc.local" ] || . "$HOME/.zshrc.local"
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
