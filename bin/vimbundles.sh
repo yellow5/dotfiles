@@ -18,6 +18,7 @@ get_bundle chriskempson base16-vim
 get_bundle derekwyatt vim-scala
 get_bundle duff vim-bufonly
 get_bundle elixir-editors vim-elixir
+get_bundle github copilot.vim
 get_bundle godlygeek tabular
 get_bundle jimenezrick vimerl
 get_bundle kchmck vim-coffee-script
