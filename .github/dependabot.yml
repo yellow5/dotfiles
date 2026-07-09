@@ -1,0 +1,61 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # Maintain dependencies for Github Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    groups:
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "Github Actions"
+    assignees:
+      - "yellow5"
+    schedule:
+      interval: "weekly"
+
+  # Maintain dependencies for Ruby
+  - package-ecosystem: "bundler"
+    directory: "/"
+    groups:
+      minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "Ruby"
+    assignees:
+      - "yellow5"
+    schedule:
+      interval: "weekly"
+
+  # Maintain dependencies for Python
+  - package-ecosystem: "uv"
+    directory: "/"
+    groups:
+      minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "Python"
+    assignees:
+      - "yellow5"
+    schedule:
+      interval: "weekly"
