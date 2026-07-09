@@ -13,7 +13,10 @@ def home
 end
 
 def install(file)
-  if system("ln", "-nsf", "#{root}/#{file}", "#{home}/#{file}")
+  source = "#{root}/#{file}"
+  return puts "no source at #{source}" unless File.exist?(source)
+
+  if system("ln", "-nsf", source, "#{home}/#{file}")
     print "successfully installed "
   else
     print "failed to install "
@@ -47,14 +50,16 @@ if ARGV.include?("-h")
   exit 0
 end
 
-# Repo-tooling and dev artifacts that live here but must not be symlinked into $HOME.
-IGNORE = %w[
-  bin . .. .git .github .venv .bundle
-  .editorconfig .shellcheckrc .vintrc.yaml .standard.yml .pre-commit-config.yaml
-  .ruby-version Gemfile Gemfile.lock pyproject.toml uv.lock README.md
+# Dotfiles to symlink into $HOME. Add new dotfiles here; repo tooling and dev
+# artifacts stay out of $HOME simply by being omitted from this list.
+INSTALL = %w[
+  .bash_aliases .bash_functions .bash_profile .bashrc
+  .ctags .gemrc
+  .gitconfig .gitignore
+  .vim .vimrc
+  .zshrc
 ]
 
-(Dir.entries(root) - IGNORE).each do |file|
-  next if /(~|.*\.swp)$/.match?(file)
+INSTALL.each do |file|
   uninstall? ? uninstall(file) : install(file)
 end

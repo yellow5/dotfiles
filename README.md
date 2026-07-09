@@ -7,8 +7,7 @@ Cameron's personal dotfiles.
 
 ## Install
 
-`bin/hlink` symlinks the tracked dotfiles into `$HOME` (repo tooling and dev
-artifacts are skipped):
+`bin/hlink` symlinks the tracked dotfiles listed in the script into `$HOME`:
 
 ```sh
 bin/hlink        # create the symlinks
