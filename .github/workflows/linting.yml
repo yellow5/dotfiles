@@ -1,0 +1,77 @@
+name: Linting
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches:
+      - main
+
+concurrency:
+  group: lint-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint_ruby:
+    name: ✨ Lint Ruby
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          # Ruby version is read from .ruby-version
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: StandardRB
+        run: bundle exec standardrb
+
+  lint_shell:
+    name: ✨ Lint Shell
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up shfmt
+        uses: mfinelli/setup-shfmt@v4
+
+      - name: shfmt (format check)
+        run: |
+          shfmt -d -i 2 -ci -sr -ln bash .bashrc .bash_functions .bash_aliases .bash_profile
+          shfmt -d -i 2 -ci -sr bin/vimbundles.sh
+
+      - name: ShellCheck
+        run: shellcheck -x .bashrc .bash_profile .bash_aliases .bash_functions bin/vimbundles.sh
+
+      - name: zsh syntax check
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zsh
+          zsh -n .zshrc
+
+  lint_vim:
+    name: ✨ Lint Vim
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Verify lockfile
+        run: uv lock --check
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: vint
+        run: uv run vint .vimrc

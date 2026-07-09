@@ -1,0 +1,46 @@
+# Optional local-dev hooks. CI (.github/workflows/linting.yml) is the source of
+# truth; this just catches the same issues before you push.
+#
+#   brew install pre-commit
+#   bundle install && uv sync     # the ruby/vim hooks delegate to these
+#   pre-commit install
+#
+# Bump pinned revs with:  pre-commit autoupdate
+minimum_pre_commit_version: "3.0.0"
+
+repos:
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.11.0
+    hooks:
+      - id: shellcheck
+        args: ["-x"]
+        types: [file]
+        files: ^(\.bashrc|\.bash_profile|\.bash_aliases|\.bash_functions|bin/vimbundles\.sh)$
+
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.13.1-1
+    hooks:
+      - id: shfmt
+        args: ["-i", "2", "-ci", "-sr", "-ln", "bash"]
+        types: [file]
+        files: ^(\.bashrc|\.bash_profile|\.bash_aliases|\.bash_functions|bin/vimbundles\.sh)$
+
+  - repo: local
+    hooks:
+      - id: standardrb
+        name: StandardRB
+        entry: bundle exec standardrb
+        language: system
+        files: ^bin/hlink$
+
+      - id: vint
+        name: vint
+        entry: uv run vint
+        language: system
+        files: ^\.vimrc$
+
+      - id: zsh-syntax
+        name: zsh -n
+        entry: zsh -n
+        language: system
+        files: ^\.zshrc$

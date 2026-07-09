@@ -28,19 +28,18 @@ bind '"\C-w": backward-kill-word'
 [ -z "$PS1" ] || export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch)$ "
 
 # Enable bash completion in OSX interactive shells
-for COMPLETION in $(brew --prefix)/etc/bash_completion.d/*
-do
+for COMPLETION in "$(brew --prefix)"/etc/bash_completion.d/*; do
+  # shellcheck source=/dev/null
   [[ -f $COMPLETION ]] && source "$COMPLETION"
 done
-if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]];
-then
+if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]]; then
   source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 fi
 
 # Enable asdf
-. $(brew --prefix asdf)/asdf.sh
+. "$(brew --prefix asdf)/asdf.sh"
 
-PATH=$PATH:$HOME/bin             # Add my bin to the PATH
+PATH="$PATH:$HOME/bin" # Add my bin to the PATH
 export PATH
 
 [ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
