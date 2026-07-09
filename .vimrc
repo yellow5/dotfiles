@@ -40,6 +40,9 @@ augroup scala
   au BufNewFile,BufRead *.sc setfiletype scala
 augroup END
 
+" Syntax-highlight fenced code blocks in markdown (native markdown; replaces tpope/vim-markdown)
+let g:markdown_fenced_languages = ['ruby', 'elixir', 'javascript', 'typescript', 'python', 'html', 'css', 'json', 'sh', 'bash=sh']
+
 " Disable NERDTree by default
 let NERDTreeHijackNetrw=0
 
