@@ -1,5 +1,4 @@
 *.swp
-.vim/bundle
+.vim/pack
 .vim/.netrwhist
 .vim/doc/tags
-.vim/autoload/pathogen.vim

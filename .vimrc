@@ -1,7 +1,5 @@
-runtime! autoload/pathogen.vim
-if exists('g:loaded_pathogen')
-  execute pathogen#infect()
-endif
+" Load native packages (~/.vim/pack/plugins/start) before anything references them
+packloadall
 
 " Configure the default colorscheme
 syntax enable
