@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
-require 'fileutils'
 
 def cwd
-  @cwd ||= File.expand_path(File.dirname(__FILE__))
+  @cwd ||= __dir__
 end
 
 def root
@@ -10,15 +9,11 @@ def root
 end
 
 def home
-  @home ||= File.expand_path('~')
+  @home ||= File.expand_path("~")
 end
 
-def destination(file,sub_directory)
-  File.join(*[home, sub_directory, File.basename(file)].compact)
-end
-
-def install(file,sub_directory=nil)
-  if system("ln -nsf #{root}/#{file} #{home}/#{file}")
+def install(file)
+  if system("ln", "-nsf", "#{root}/#{file}", "#{home}/#{file}")
     print "successfully installed "
   else
     print "failed to install "
@@ -26,7 +21,7 @@ def install(file,sub_directory=nil)
   puts file
 end
 
-def uninstall(file,sub_directory=nil)
+def uninstall(file)
   file = File.join(home, file)
   return puts "no file at #{file}" unless File.exist?(file)
   if File.symlink?(file)
@@ -38,21 +33,28 @@ def uninstall(file,sub_directory=nil)
 end
 
 def uninstall?
-  ARGV.include?('-u')
+  ARGV.include?("-u")
 end
 
-if ARGV.include?('-h')
+if ARGV.include?("-h")
   script = File.basename(__FILE__)
-  puts %[
+  puts %(
   "#{script}" symlinks the files in dotfiles into your home directory.
   options:
       -h  Get this help
       -u  Remove symlinks to files in dotfiles
-  ]
+  )
   exit 0
 end
 
-(Dir.entries(root) - %w(bin . .. .git)).each do |file|
-  next if file =~ /(~|.*\.swp)$/
+# Repo-tooling and dev artifacts that live here but must not be symlinked into $HOME.
+IGNORE = %w[
+  bin . .. .git .github .venv .bundle
+  .editorconfig .shellcheckrc .vintrc.yaml .standard.yml .pre-commit-config.yaml
+  .ruby-version Gemfile Gemfile.lock pyproject.toml uv.lock README.md
+]
+
+(Dir.entries(root) - IGNORE).each do |file|
+  next if /(~|.*\.swp)$/.match?(file)
   uninstall? ? uninstall(file) : install(file)
 end

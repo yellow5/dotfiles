@@ -2,3 +2,8 @@
 .vim/pack
 .vim/.netrwhist
 .vim/doc/tags
+
+# Dev tooling artifacts (Ruby/Python linters)
+.venv
+.bundle
+vendor/bundle

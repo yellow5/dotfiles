@@ -1,0 +1,7 @@
+# These files are sourced (not executed) and carry no shebang, so tell
+# ShellCheck to treat them as bash.
+shell=bash
+
+# The configs source machine-local (*.local) and Homebrew-provided files that
+# don't live in this repo; don't flag the un-followable `source`/`.` lines.
+disable=SC1091
