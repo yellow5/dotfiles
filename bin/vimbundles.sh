@@ -34,15 +34,11 @@ get_bundle preservim nerdtree
 get_bundle preservim nerdcommenter
 
 # --- tpope suite (mature/stable, language-agnostic) ---
-get_bundle tpope vim-abolish
 get_bundle tpope vim-endwise
 get_bundle tpope vim-fugitive       # git
-get_bundle tpope vim-git            # git
 get_bundle tpope vim-repeat
 get_bundle tpope vim-speeddating
-get_bundle tpope vim-surround
-get_bundle tpope vim-unimpaired
-get_bundle tpope vim-ragtag         # html/xml tags
+# get_bundle tpope vim-surround      # OPTIONAL: cs/ds/ys to change/delete/add surrounding quotes, brackets, tags
 get_bundle tpope vim-pathogen       # NOTE: plugin manager, normally lives in ~/.vim/autoload
 
 # --- ruby / rails ---
