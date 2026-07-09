@@ -72,8 +72,8 @@ ZSH_DOTENV_PROMPT=false
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  asdf
-  brew
+  aws
+  bun
   bundler
   colorize
   dotenv
@@ -84,14 +84,11 @@ plugins=(
   httpie
   iterm2
   man
+  mise
   mix
-  npm
   rails
   rake
-  ruby
-  sudo
-  thor
-  yarn
+  uv
 )
 
 source $ZSH/oh-my-zsh.sh
