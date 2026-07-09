@@ -1,6 +1,7 @@
 # Dotfiles
 
 [![Linting](https://github.com/yellow5/dotfiles/actions/workflows/linting.yml/badge.svg)](https://github.com/yellow5/dotfiles/actions/workflows/linting.yml)
+[![Security](https://github.com/yellow5/dotfiles/actions/workflows/security.yml/badge.svg)](https://github.com/yellow5/dotfiles/actions/workflows/security.yml)
 
 Cameron's personal dotfiles.
 

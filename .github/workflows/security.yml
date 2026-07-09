@@ -1,0 +1,24 @@
+name: Security
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches:
+      - main
+
+concurrency:
+  group: sec-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: 🔐 Scan Code
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+
+    steps:
+      - uses: actions/checkout@v7
+      - name: Bearer
+        uses: bearer/bearer-action@v2
+        with:
+          severity: critical,high
