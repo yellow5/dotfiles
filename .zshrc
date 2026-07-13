@@ -128,3 +128,7 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
+
+# fzf shell integration: key bindings (^T files, ^R history, M-c cd) + fuzzy completion
+# Guarded so a machine without fzf yet doesn't error on shell startup (needs fzf >= 0.48)
+command -v fzf > /dev/null && eval "$(fzf --zsh)"
