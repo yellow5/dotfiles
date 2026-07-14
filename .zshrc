@@ -124,9 +124,10 @@ alias ls='ls -FG'
 
 [ ! -f "$HOME/.zshrc.local" ] || . "$HOME/.zshrc.local"
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # append completions to fpath
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+# fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
