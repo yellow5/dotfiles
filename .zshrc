@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -123,9 +124,10 @@ alias ls='ls -FG'
 
 [ ! -f "$HOME/.zshrc.local" ] || . "$HOME/.zshrc.local"
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # append completions to fpath
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+# fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 

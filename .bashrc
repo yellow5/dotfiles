@@ -37,7 +37,7 @@ if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]]; then
 fi
 
 # Enable asdf
-. "$(brew --prefix asdf)/asdf.sh"
+# . "$(brew --prefix asdf)/asdf.sh"
 
 PATH="$PATH:$HOME/bin" # Add my bin to the PATH
 export PATH
