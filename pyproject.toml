@@ -2,7 +2,7 @@
 name = "dotfiles-lint"
 version = "0"
 description = "Dev tooling for linting the dotfiles repo"
-requires-python = ">=3.9"
+requires-python = ">=3.14"
 
 [dependency-groups]
 # Newest published vim-vint is a pre-release; it carries the Python 3.12+ fixes.
