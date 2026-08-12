@@ -65,6 +65,7 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Set up Python
+        # Python version is read from .python-version
         run: uv python install
 
       - name: Verify lockfile
